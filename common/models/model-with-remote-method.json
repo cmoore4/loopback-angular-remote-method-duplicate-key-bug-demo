@@ -1,0 +1,37 @@
+{
+  "name": "modelWithRemoteMethod",
+  "plural": "mwrms",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "prop1": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "greet": {
+      "isStatic": true,
+      "accepts": {
+        "arg": "msg",
+        "type": "string"
+      },
+      "returns": {
+        "arg": "greeting",
+        "type": "string"
+      },
+      "description": "Provided a name, returns a greeting ",
+      "http": [
+        {
+          "httpPath": "greet",
+          "httpVerb": "get"
+        }
+      ]
+    }
+  }
+}
